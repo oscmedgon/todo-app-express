@@ -4,7 +4,7 @@ const moment = require('moment')
 const cookieSession = require('cookie-session')
 require('dotenv').load()
 const app = express()
-
+var port = process.env.PORT || 8080
 const routes = require('./routes')
 const { setTasks } = require('./services/tasks')
 
@@ -29,5 +29,5 @@ app.use(bodyParser.json())
 
 app.use(routes)
 
-app.listen(43000)
-console.log('Listening on PORT 43000...')
+app.listen(port)
+console.log(`Listening on PORT ${port}...`)
