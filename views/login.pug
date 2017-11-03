@@ -1,0 +1,23 @@
+extends layout/index
+
+block content
+  .row
+    .col-md-8.col-md-offset-2
+      h1.section-title Login
+      if loginError === 1
+        p.alert.alert-danger
+          strong El usuario introducido es incorrecto
+      if loginError === 2
+        p.alert.alert-danger
+          strong La contraseña es incorrecta  
+      .login-form
+        form(action='/login/check' method='POST')
+          .row
+            .col-sm-6
+              label User:
+              input.form-control(name='username' type='text' placeholder='Enter your username')
+            .col-sm-6
+              label Password:
+              input.form-control(name='password' type='password' required placeholder='Enter your password')
+          button.btn.btn-lg.btn-success.login-button Log In
+      

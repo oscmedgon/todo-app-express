@@ -1,0 +1,104 @@
+.add-task-form {
+  margin-bottom: 20px;
+}
+
+body{
+  background-color: grey;
+}
+.section-title{
+  text-align: center;
+  color: orange;
+}
+.task-form{
+  display: flex;
+  justify-content: center;
+}
+.task-input-container{
+  width: 80%;
+}
+.task-input-container .task-input{
+  width: 100%;
+}
+.task-button{
+  text-align: center;
+  font-weight: bold;
+}
+
+.task-title{
+  text-align: center;
+  font-weight: bold;
+}
+.complete-all-task{
+  display: block;
+  margin: auto;
+}
+.task-item{
+  position: relative;
+}
+.task-item:hover{
+  border-color: orange;
+}
+.task-item.edit-mode:hover .edit-button{
+  visibility: hidden;
+}
+.task-item:hover .edit-button{
+  visibility: visible;
+}
+.edit-button{
+  margin: 0px;
+  display: inline-block;
+  position: absolute;
+  height: 100%;
+  right: 0px;
+  top: 0px;
+  border-radius: 2px;
+  padding: 0px 10px;
+  padding-top: 15px;
+  font-size: 25px;
+  background-color: orange;
+  visibility: hidden;
+  color: black;
+}
+.edit-button:hover{
+  cursor: pointer;
+  color: white;
+}
+.edit-task{
+  display: none;
+}
+.edit-task input{
+  border-radius: 4px;
+  text-align: center;
+}
+.edit-task button{
+  visibility: hidden;
+}
+.task-item.edit-mode .edit-task{
+  display:inline-block;
+}
+.task-item.edit-mode{
+  background-color: #5BC0DE;
+  border-color: #5BC0DE;
+}
+
+.task-item.edit-mode .task-description{
+  display: none;
+}
+.list-group .tasks-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.list-group .tasks-container .task-container{
+  width: 70%;
+}
+
+.login-form{
+  margin-top: 30px;
+}
+
+.login-button{
+  margin-top: 20px;
+  width: 100%
+}

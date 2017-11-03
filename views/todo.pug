@@ -1,0 +1,33 @@
+extends layout/index
+
+block content
+  .row
+    .col-md-8.col-md-offset-2
+      h1.section-title= title
+      form.form-inline.add-task-form(action='/new', method='POST')
+        .task-form
+          div.task-input-container
+            input.form-control.task-input(type='text', name='title', autofocus, placeholder='Write your new task...' required)
+          div
+            button.btn.btn-info(type='submit') Add Task!
+      ul.list-group
+        each task in tasks
+          .tasks-container
+            div.remove-button
+              button.btn.btn-lg.btn-danger.task-button.remove-task(data-id=task.id) Delete
+            div.task-container
+              li.list-group-item.task-title.task-item
+                span.task-description=task.title
+                form.edit-task(data-id=task.id)
+                  input(name='taskEdited' value=task.title)
+                  button
+                br
+                | &nbsp;
+                span Created at:
+                | &nbsp;
+                span= task.createdAt
+                span.edit-button
+                  i.glyphicon.glyphicon-pencil
+            div.done-button
+              button.btn.btn-lg.btn-success.task-button.complete-task(data-id= task.id) Done
+        button.btn.btn.sm.btn-success.task-button.complete-all-task Mark all tasks as completed
