@@ -1,5 +1,8 @@
 const express = require('express')
-
+const user = {
+  username: 'pepe',
+  password: 'pepe'
+}
 const router = express.Router()
 
 const showPendingTasks = require('./handlers/showPendingTasks.js')
@@ -16,9 +19,9 @@ router.get('/login', function (req, res) {
 })
 router.post('/login/check', function (req, res) {
   let loginError
-  if (req.body.username !== process.env.ADMIN_USER) {
+  if (req.body.username !== user.username) {
     loginError = 1
-  } else if (req.body.password !== process.env.ADMIN_PASSWORD) {
+  } else if (req.body.password !== user.password) {
     loginError = 2
   } else {
     req.session.logged = true
